@@ -42,13 +42,13 @@ def home():
                 else:
                     lamela = lamela_base
 
-                prediction = f"Broj lamela: {lamela}, Raster: {round(raster, 2)} mm"
+                prediction = f"Broj lamela: {lamela}, Raster: {round(raster, 1)} mm"
                 return render_template("index.html", prediction=prediction)
 
             else:
                 raise ValueError("Nepoznat tip lamele.")
 
-            prediction = f"Broj lamela: {prikaz_lamela}, Raster: {round(raster, 2)} mm"
+            prediction = f"Broj lamela: {prikaz_lamela}, Raster: {round(raster, 1)} mm"
 
         except Exception as e:
             prediction = f"Greška: {str(e)}"
@@ -57,3 +57,6 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
